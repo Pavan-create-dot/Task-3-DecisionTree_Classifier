@@ -1,92 +1,99 @@
-# DS_Task3
-A comprehensive guide and implementation of a Decision Tree Classifier. This project demonstrates the end-to-end workflow for training and evaluating a model on a real-world dataset, including preprocessing, visualization, and performance metrics. Perfect for those looking to understand decision tree concepts in data science.
-## Overview 📝
-Welcome to the DS_Task3 repository! This project demonstrates a comprehensive data science workflow, including data preprocessing, exploratory data analysis (EDA), machine learning modeling, and result evaluation. The primary goal is to classify sentiments in textual data and analyze the performance of the classification model. 🔥
+# Overview 📝
+Welcome to the DS_Task3 repository! This project demonstrates how to build a Decision Tree Classifier using the `bank.csv` dataset. The goal is to predict whether a person will subscribe to a term deposit based on their demographic and behavioral features.
+
+This repository provides all the necessary code to preprocess the data, train a Decision Tree model, visualize the tree structure, and interpret the results. 🔥
 
 ## Dataset 📊
-The project utilizes two datasets:
-1. **Training Dataset**: Used for building the sentiment classification model.
-2. **Validation Dataset**: Used to evaluate the model's performance and compare predicted sentiments with actual sentiments.
+The dataset used in this project is related to bank marketing. It contains information about individuals' demographic and behavioral data. The objective is to predict whether or not an individual subscribes to a term deposit based on various features.
+Bank : https://1drv.ms/x/c/f6bc90f75ca4b431/EcYMKMGoKIROr_k4cT1Zi5wBfWz_NWkV36MjXkKfDHgHfg?e=Wgu3ZC
+Bank-full : https://1drv.ms/x/c/f6bc90f75ca4b431/EdDBowS-DOVCthZAtrFiHPwBf7YgoSx0YsP9g_kuCDVVoQ?e=4ozaxB
 
-### Data Details
-The datasets consist of the following key features:
-- **text**: The main text data containing user comments or tweets.
-- **cleaned_text**: Preprocessed version of the `text` column.
-- **sentiment**: Sentiment label (Positive, Negative, Neutral).
 
-The training dataset is used to develop the model, while the validation dataset is used to test and refine the predictions. 🧹
+### Data Details:
+The dataset includes the following columns:
+
+- **age**: Age of the individual. 🎂
+- **job**: Type of job (e.g., unemployed, services, management, etc.). 💼
+- **marital**: Marital status (e.g., married, single). 💍
+- **education**: Education level (e.g., primary, secondary, tertiary). 🎓
+- **default**: Whether the individual has credit in default (yes/no). 💳
+- **balance**: Account balance. 💵
+- **housing**: Whether the individual has a housing loan (yes/no). 🏡
+- **loan**: Whether the individual has a personal loan (yes/no). 💰
+- **contact**: Contact communication type (e.g., cellular, telephone). 📞
+- **day**: Last contact day of the month. 📅
+- **month**: Last contact month of the year. 📆
+- **duration**: Duration of the last contact. ⏳
+- **campaign**: Number of contacts performed during the campaign. 📈
+- **pdays**: Number of days since the client was last contacted. 🕰️
+- **previous**: Number of contacts performed before this campaign. 📞
+- **poutcome**: Outcome of the previous marketing campaign (success, failure, etc.). 🏆
+- **y**: Target variable (whether the person subscribed to the term deposit - yes/no). ✅
 
 ## Tools and Libraries 🛠️
-The following tools and libraries are used:
-- **Python 3.x**: The programming language used. 🐍
-- **pandas**: For data manipulation and cleaning. 📊
-- **re**: For text preprocessing using regular expressions. ✂️
-- **TextBlob**: For sentiment analysis. 📜
-- **matplotlib** & **seaborn**: For data visualization. 📈
-- **wordcloud**: To create a word cloud visualization. ☁️
+To successfully run the code and visualize the decision tree, the following tools and libraries are required:
+
+- **Python 3.x**: The main programming language used. 🐍
+- **pandas**: For data manipulation and loading. 📊
+- **numpy**: For numerical operations. 🔢
+- **scikit-learn**: For building the Decision Tree model. 🧠
+- **matplotlib**: For plotting visualizations. 📊
 
 ## What does the code do? 🤖
-The project is divided into several major steps:
+The notebook follows these major steps:
 
-### 1. Data Loading
-The datasets are loaded from CSV files into pandas DataFrames for analysis and processing.
+1. **Data Preprocessing**:
+   - Load the dataset and inspect its structure.
+   - Handle missing values and encode categorical variables. 🔧
 
-### 2. Data Preprocessing
-- Filling missing values in the `text` column.
-- Cleaning the text data by removing URLs, mentions, hashtags, and non-alphabetic characters.
-- Lowercasing and stripping unnecessary whitespace from the text.
+2. **Model Training**:
+   - Train a Decision Tree Classifier on the dataset using the target column `y`. 🌟
 
-### 3. Sentiment Classification
-- Sentiments are classified using `TextBlob` polarity scores:
-  - Positive polarity -> Positive sentiment.
-  - Negative polarity -> Negative sentiment.
-  - Neutral polarity -> Neutral sentiment.
-- The results are stored in a new column `sentiment` (for training data) and `Predicted_Sentiment` (for validation data).
+3. **Visualization**:
+   - Visualize the Decision Tree  to understand the model's decision-making process. 🌱
 
-### 4. Visualization
-- Bar plots are used to visualize sentiment distributions in both datasets.
-- Word clouds are generated to highlight common words in positive sentiments.
-
-### 5. Evaluation
-- If the validation dataset contains actual sentiment labels, a comparison between actual and predicted sentiments is conducted using a confusion matrix.
-- Performance metrics are analyzed to assess the model's accuracy and effectiveness.
+4. **Evaluation**:
+   - Assess model performance using metrics like accuracy and a classification report. 📈
 
 ## How to Run 🚀
+Follow these steps to set up and run the project:
+
 1. Clone the repository:
    ```bash
    git clone https://github.com/your_username/DS_Task3.git
    cd DS_Task3
    ```
+
 2. Install the required libraries:
    ```bash
-   pip install pandas textblob matplotlib seaborn wordcloud
+   pip install pandas numpy scikit-learn  matplotlib
    ```
-3. Ensure the dataset files are in the correct directory.
-4. Run the main code:
+
+3. Open the Jupyter Notebook:
    ```bash
-   python DS_Task3.py
+   jupyter notebook DS_Task3.ipynb
    ```
-5. Visualizations and evaluation metrics will be displayed as part of the script output.
 
-## Handling Directory Issues ⚠️
-- Ensure the file paths for `training_data_path` and `validation_data_path` are correctly set in the script.
-- Place the datasets in the specified directory or update the script with the correct paths.
+4. Run all cells in the notebook to train the Decision Tree and visualize the results.
 
-## Sample Video 🎥
-Here’s a quick demo of the workflow and visualizations:
-- *Task-3-Demo.mp4*
+## Handling Issues ⚠️
+- **Dataset Not Found**: Ensure the `bank.csv` file is placed in the correct directory or update the file path in the notebook. 🗂️
 
 ## Desired Output 🎯
-The project produces the following outputs:
-1. Enhanced datasets with additional columns for cleaned text and predicted sentiments.
-2. Visualizations:
-   - Sentiment distributions in training and validation datasets.
-   - Word cloud for positive sentiments.
-3. Evaluation metrics (if actual sentiments are available in the validation dataset).
+The project outputs the following:
+
+- A visualized Decision Tree saved as a `.png` file.
+- ![image](https://github.com/user-attachments/assets/54dcab76-b545-4d8a-9fe9-4dab02af71d7)
+
+- Model evaluation metrics, including accuracy and classification report.
+- 
+
+https://github.com/user-attachments/assets/f2105402-9aa1-4d7c-b805-2bbf1b58c052
+
+
 
 ## Conclusion 🎉
-By following this project, you will learn to:
-- Preprocess textual data efficiently. ✂️
-- Perform sentiment analysis using `TextBlob`. 📜
-- Visualize sentiment distributions and common words. ☁️
-- Evaluate model performance using confusion matrices and classification metrics. 📉
+By following this guide, you will:
+- Preprocess and prepare the `bank.csv` dataset for analysis. 🔧
+- Train and visualize a Decision Tree Classifier. 🌟
+- Evaluate the model's performance and understand its decision-making process. 🌳
