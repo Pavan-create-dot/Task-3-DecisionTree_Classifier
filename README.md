@@ -5,7 +5,9 @@ This repository provides all the necessary code to preprocess the data, train a 
 
 ## Dataset 📊
 The dataset used in this project is related to bank marketing. It contains information about individuals' demographic and behavioral data. The objective is to predict whether or not an individual subscribes to a term deposit based on various features.
+
 Bank : https://1drv.ms/x/c/f6bc90f75ca4b431/EcYMKMGoKIROr_k4cT1Zi5wBfWz_NWkV36MjXkKfDHgHfg?e=Wgu3ZC
+
 Bank-full : https://1drv.ms/x/c/f6bc90f75ca4b431/EdDBowS-DOVCthZAtrFiHPwBf7YgoSx0YsP9g_kuCDVVoQ?e=4ozaxB
 
 
@@ -60,7 +62,7 @@ Follow these steps to set up and run the project:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your_username/DS_Task3.git
+   git clone https://github.com/Pavan-create-dot/DS_Task3.git
    cd DS_Task3
    ```
 
